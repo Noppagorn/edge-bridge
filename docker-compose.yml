@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  rtsp-server:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - RTSP_URL=${RTSP_URL}
+      - RTSP_USERNAME=${RTSP_USERNAME}
+      - RTSP_PASSWORD=${RTSP_PASSWORD}
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    # Enable GUI display if needed (uncomment if you want to see the video stream)
+    # environment:
+    #   - DISPLAY=${DISPLAY}
+    # volumes:
+    #   - /tmp/.X11-unix:/tmp/.X11-unix 
