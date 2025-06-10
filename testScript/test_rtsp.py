@@ -22,7 +22,9 @@ def test_rtsp():
     parsed_url = urllib.parse.urlparse(rtsp_url)
     full_url = f"{parsed_url.scheme}://{username}:{password}@{parsed_url.netloc}{parsed_url.path}"
     
-    print(f"Attempting to connect to RTSP stream: {rtsp_url}")
+    # Create masked URL for logging (hide password)
+    masked_url = f"{parsed_url.scheme}://{username}:***@{parsed_url.netloc}{parsed_url.path}"
+    print(f"Attempting to connect to RTSP stream: {masked_url}")
     
     # Try to open the stream
     cap = cv2.VideoCapture(full_url)
