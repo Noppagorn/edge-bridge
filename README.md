@@ -1,5 +1,8 @@
 # Edge Device System
 
+![ChatGPT Image 8 มิ ย  2568 22_41_07](https://github.com/user-attachments/assets/cab09b19-c2a8-4649-aceb-7dfb381bf7ac)
+
+
 This system provides a complete solution for detecting objects using RTSP cameras and YOLO object detection. It consists of an edge device (Raspberry Pi) that processes the video stream and a viewer application for monitoring the stream from any computer.
 
 ## System Components
