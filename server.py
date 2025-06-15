@@ -10,6 +10,8 @@ import os
 import argparse
 import logging
 import re
+import socket
+from utils import get_network_interfaces
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -123,6 +125,12 @@ def main():
         return
     
     try:
+        # Get and log available network interfaces
+        interfaces = get_network_interfaces()
+        logger.info("Available network interfaces:")
+        for ip in interfaces:
+            logger.info(f"  - http://{ip}:{args.port}")
+        
         # Start Flask server
         logger.info(f"Starting server on {args.host}:{args.port}")
         app.run(host=args.host, port=args.port, threaded=True)
