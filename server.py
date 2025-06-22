@@ -46,6 +46,7 @@ def validate_rtsp_credentials(url, username, password):
     
     return True, "Credentials valid"
 
+# using ZeroTier IP
 def process_frame(frame):
     """Process frame and update frame queue"""
     try:
